@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{CP Problems Analysis}
+\author{xyzyzl}
+\date{4/6/2020}
+
+\begin{document}
+\maketitle
+
+\section{Codeforces}
+\textbf{1327D. Infinite Path}\\
+Think of each permutation mapping as a graph. Let $a \rightarrow b$ be an edge if $P_a=b$. It's clear that the minimum value of $k$ s.t $C_{P^k_x} = C_x$ for some $x$ would be the smallest value where the node $kx$ away from the current node has the same color as the current node for all nonnegative integers $x$. As this is the minimum such $k$, it follows that $k | n$. Thus, we can loop over all divisors of $n$ and check if it satisfies the condition. \\
+The mistake I made was that I did not remember to check visited for the \textit{current} node, but rather checked it on the \textit{next} node. Thus, the next iteration, it would see that the node was "visited" when it really was not, and break. Thus, all of my answers were just 1.
+
+\section{USACO}
+\textbf{2020 US Open - Gold: Haircut}\\
+This was actually extremely simple and I don't know why I didn't get it.\\
+When I found inversions with the algorithm, for each index $i$, it counted the number of elements $j < i$ that had $a_j < a_i$ using a BIT. Then, it subtracted that value from $i$. \\
+So we can find the number inversions for all indices $i$ of a specific value. And that's all we really want. From there we can find the number of inversions solely comprising values $\le x \forall x$.
+\end{document}
