@@ -18,5 +18,18 @@ The mistake I made was that I did not remember to check visited for the \textit{
 \textbf{2020 US Open - Gold: Haircut}\\
 This was actually extremely simple and I don't know why I didn't get it.\\
 When I found inversions with the algorithm, for each index $i$, it counted the number of elements $j < i$ that had $a_j < a_i$ using a BIT. Then, it subtracted that value from $i$. \\
-So we can find the number inversions for all indices $i$ of a specific value. And that's all we really want. From there we can find the number of inversions solely comprising values $\le x \forall x$.
+So we can find the number inversions for all indices $i$ of a specific value. And that's all we really want. From there we can find the number of inversions solely comprising values $\le x \forall x$. \\
+\textbf{Update}: I read my code for \textit{mincross} which had inversion count and I feel terrible for not noticing this -- it was literally in the code. \\
+\\
+\textbf{2020 US Open - Gold: Exercise}\\
+So I made significant progress during the contest but for some reason just didn't implement it. A few key ideas that I came up with were that:
+\begin{itemize}
+	\item Each permutation is a "cycle" of different permutations. The number of times before repetition is the lcm of all cycle lengths. \\
+	\item We need to find $lcm(a_1, a_2, \dotsc, a_g)$ for some $g$ s.t. $\sum_{i=1}^g a_i = n$. \\
+	\item Anything that works for $j < i$ steps also works for $i$ steps.
+\end{itemize}
+However, I did not know how to find the lcm of all $a_i$ despite it being clear from the third observation that it was DP. \\
+Let $dp_{i, j}$ be the running sum with the first $i$ primes and the first $j$ indices. Then
+$$dp_{i,j} = dp{i-1, j} + (p_i^a \cdot dp_{i-1, j-p_i^a} \forall a \le \log_{p_i}j).$$
+$dp_{i-1, j}$ is the previous step and the other long expression is the added running sum from the $i$th prime $p_i$.
 \end{document}

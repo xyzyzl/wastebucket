@@ -1,0 +1,148 @@
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[sexy]{evan}
+
+\title{Euler Circle}
+\author{Albert Ye}
+\date{April 1, 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Week 1}
+\subsection{Solutions}
+A few interesting problems I've done:
+
+2) (needed for 20) We know that $gH(gh)^{-1} = e = geg^{-1} = ghh^{-1}g^{-1} = gh(h^{-1}g^{-1})$. So $(gh)^{-1} = h^{-1}g^{-1}$. \blackqed
+
+6) Let us start at a complex value $z$. $\rho \tau$ is adding $x$ and taking the negative of the value $z+x$. $\tau \rho^{-1}$ is taking the negative of $z$ and subtracting $x$. Both outcomes lead to $-z-x$. \blackqed
+
+8) By definition, $\mu_n$ is a root of unity. The rest follows trivially. \blackqed
+
+11) Translations and glide reflections cannot work because they move the point irreparably away from the origin. For rotations, any rotation across a center $\ne (0, 0)$ will bring the point out of the origin. The center must be $(0,0)$ and the angle can be anything. For reflections, any line that does not intersect $(0,0)$ will take the point out of the origin, so only lines going through $(0,0)$ can work.
+
+20) We can just let $\tau$ be $\tau$ because $\tau^2 = e$. For $\rho$, we note that any rotation is a composition of two non-parallel lines. Hence, $\rho$ can be expressed as two reflections, each of which can be reversed in one step. \blackqed 
+
+21) We know from (2) that $gh = (gh)^{-1} = h^{-1}g^{-1} = hg$. \blackqed 
+
+22) Fix two elements $a,b$ in $G$. Assume that $ab \ne ba$. Then there are at best $5$ elements $a,b,ab,ba,e$. However, we are given that $G$ is order $4$, contradiction. \blackqed
+
+23) Every element must have an inverse by definition of group. Because $G$ is a group, all of the elements not with order $2$ have some other inverse in the group. Commutativity allows us to pair up each element with its inverse. Hence, all that remains are the ones who only have inverses as themselves because they were only counted once -- the rest all turned into identity. 
+
+For Wilson's, substitute $\mathbb{Z}/p\mathbb{Z}$ as $G$ with multiplication as the operation. $(p-1)!$ is the product of all numbers $1 \cdots p-1$. Everything cancels out except for the ones with inverse as themself, namely $1$ and $p-1$. Hence, the residue is $-1$. \blackqed 
+
+\section{Week 2}
+
+\subsection{Notes}
+\subsubsection{Subgroup}
+\begin{definition}
+	Let $G$ be a group. A nonempty subset $H$ of $G$ is a \vocab{subgroup} of $G$ if
+	\begin{itemize}
+		\item $h_1,h_2 \in H \implies h_1h_2 \in H$
+		\item $h \in H \implies h^{-1} \in H$
+	\end{itemize}
+	If $H$ is a subgroup of $G$ we denote $H \le G$.
+\end{definition}
+Here is another way to create groups from groups:
+\subsubsection{Direct Product}
+\begin{definition}
+	Let $G, H$ be groups. Let their direct product $G \times H$ whose set is $\{(g,h) \forall g \in G, h \in H \}$ and whose operation is $(g_1,h_1) \cdot (g_2,h_2) = (g_1g_2, h_1h_2)$.
+\end{definition}
+
+\subsubsection{Homomorphism}
+\begin{definition}
+	Let $G, H$ be groups. A \vocab{homomorphism} is a function $f : G \rightarrow H$ s.t. $f(g_1g_2) = f(g_1)f(g_2)$.
+\end{definition}
+
+Homomorphisms must \textit{always} exist. Just see $f(g) = e_H \forall g \in G$.
+
+\begin{proposition}
+	Let $f:G \rightarrow H$ be a homomorphism between groups $G,H$. 
+	\begin{itemize}
+		\item $f(e_G) = e_H$
+		\item $f(g^{-1}) = f(g)^{-1}$.
+		\item order of $g \in G$ is $n$ $\implies$ order of $f(g) \in H$ is \textit{at most} $n$.
+	\end{itemize}
+\end{proposition}
+\begin{proof}
+	1) $f(e_G) = f(e_Ge_G) = f(e_G)f(e_G) \implies e_H = f(e_G)$ \\
+	2) $e_H = f(e_G) = f(gg^{-1}) = f(g)f(g^{-1})$. Multiply by $f(g^{-1})$ to get the desired. \\
+	3) Let $g^n = e$. Then $e_H = f(e_G) = f(g^n) = f(g)^n$. This only shows that $f(g)$ has order $\le n$. Just see the trivial homomorphism.
+\end{proof}
+
+\begin{definition}
+	Let $f : G \rightarrow H$ be a homomorphism.
+	\begin{itemize}
+		\item The \vocab{kernel} of $f$ is the set of elements in $G$ s.t. $f(g) = e_H$.
+		\item The \vocab{image} of $f$ is the set of elements in $H$ that take on a value of $f(g)$ for some $g \in G$.
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+We call $f:X \rightarrow Y$:
+\begin{itemize}
+	\item \textit{injective} if $a=b \implies f(a)=f(b) \forall a,b \in X$.
+	\item \textit{surjective} if $Y$ is the image of $f$.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}
+	We claim that
+	\begin{itemize}
+		\item Kernels and images are subgroups.
+		\item $f$ is injective iff the kernel of $f$ is $\{e_G\}$.
+		\item Something else true by definition.
+	\end{itemize}
+\end{proposition}
+\subsubsection{Isomorphisms}
+\begin{definition}
+	An \vocab{isomorphism} is a bijective homomorphism.
+\end{definition}
+Example: $f : \mathbb{R} \rightarrow (\mathbb{R}_{>0}, \times), f(x) = e^x$.
+
+\begin{definition}
+	An \vocab{automorphism} is the isomorphism $f : G \rightarrow G$.
+\end{definition}
+
+\begin{definition}
+	The \vocab{conjugate} of $g$ by $h$ is $hgh^{-1} \in G$. The \vocab{conjugacy class} is the set of all such conjugates.
+\end{definition}
+
+\subsubsection{Group Actions}
+Groups should be looked at as movements.
+
+\begin{definition}
+	Let $X$ be a set, $G$ a group. ($X$ can be any set.) A \vocab{left action} of $G$ on $X$ is a function $f : G \times X \rightarrow X$ s.t. 
+	\begin{itemize}
+		\item $ex = x \forall x \in X$
+		\item $(g_1g_2)x = g_1(g_2 x) \forall g_1,g_2 \in G, x \in X$
+	\end{itemize}
+	A \vocab{right action} is defined similarly.
+\end{definition}
+
+\begin{definition}
+	Alternatively, each $g \in G$ gives a permutation of the elements of $X$, i.e. an element of $S_X$. A \vocab{group action} is a homomorphism $f : G \rightarrow S_X$.
+\end{definition}
+
+Important: \\
+\begin{itemize}
+	\item All groups act on themselves with left multiplication
+	\item $G$ acts on itself by conjugation on $G \times X : X$
+\end{itemize}
+
+\begin{theorem}
+	Any finite group is isomorphic to a subgroup of $S_n$ for some positive integer $n$.
+\end{theorem}
+This looks nice, but is really inefficient. $|S_n|$ is literally factorial time!
+
+To prevent collapsing elements into one $x$ value, we define
+\begin{definition} 
+	A group action $G \rightarrow x$ is \vocab{faithful} if whenever $gx = x \forall x \in X$, then $g = e$.
+\end{definition}
+Conjugation is not necessarily faithful, as if $g \in Z(G)$, then $gx = x$.
+
+\begin{definition}
+	A group action $G$ on $X$ is \vocab{transitive} if $\forall x,y \in X$, there exists $g \in G$ s.t. $gx=y$.
+\end{definition}
+\end{document}
