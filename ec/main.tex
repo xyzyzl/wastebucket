@@ -105,6 +105,8 @@ Example: $f : \mathbb{R} \rightarrow (\mathbb{R}_{>0}, \times), f(x) = e^x$.
 	An \vocab{automorphism} is the isomorphism $f : G \rightarrow G$.
 \end{definition}
 
+Isomorphisms and automorphisms are homomorphisms.
+
 \begin{definition}
 	The \vocab{conjugate} of $g$ by $h$ is $hgh^{-1} \in G$. The \vocab{conjugacy class} is the set of all such conjugates.
 \end{definition}
@@ -118,7 +120,7 @@ Groups should be looked at as movements.
 		\item $ex = x \forall x \in X$
 		\item $(g_1g_2)x = g_1(g_2 x) \forall g_1,g_2 \in G, x \in X$
 	\end{itemize}
-	A \vocab{right action} is defined similarly.
+	A \vocab{right action} is defined similarly, as $X \times G = X$.
 \end{definition}
 
 \begin{definition}
@@ -131,7 +133,7 @@ Important: \\
 	\item $G$ acts on itself by conjugation on $G \times X : X$
 \end{itemize}
 
-\begin{theorem}
+\begin{theorem} [Cayley's Theorem]
 	Any finite group is isomorphic to a subgroup of $S_n$ for some positive integer $n$.
 \end{theorem}
 This looks nice, but is really inefficient. $|S_n|$ is literally factorial time!
@@ -145,4 +147,33 @@ Conjugation is not necessarily faithful, as if $g \in Z(G)$, then $gx = x$.
 \begin{definition}
 	A group action $G$ on $X$ is \vocab{transitive} if $\forall x,y \in X$, there exists $g \in G$ s.t. $gx=y$.
 \end{definition}
+
+\subsection{Homework}
+\begin{problem}
+	will fill later
+\end{problem}
+
+\begin{solution}
+	We know that this is true by definition, as $G$ and $H$ are bijective. Each element of $G$ must map to an element of $H$. \\ \\
+	The two groups $\mathbb{Z} / 2\mathbb{Z} \times \mathbb{Z} / 2\mathbb{Z}$ and $\mathbb{Z} / 4\mathbb{Z}$ do not fit. We cannot generate the element $3$ from the elements of 1, because we can sum to at most 1.
+\end{solution}
+
+\begin{problem}
+	Show that $G \times H \cong H \times G$
+\end{problem}
+
+\begin{solution}
+	For $G \times H$, all of the elements of $G$ and $H$ are paired to each other with $G$ as the first element. For $H \times G$, the same elements exist but with $G$ as the second element instead. Thus, we can map each element of $G \times H$ to each element of $H \times G$ by flipping the order.
+\end{solution}
+
+\begin{problem}
+	will add later
+\end{problem}
+
+\begin{solution}
+	We know that the number of red cycles is $4 \cdot 3 \cdot 2 \cdot 1 = 24$ if we fix the red point. However, this graph is undirected so we need to divide the count by two. \\
+	It is well known that each such red cycle has a blue complementary cycle. However, we are again double counting, so we divide by 2 again to get 6.
+\end{solution}
+
 \end{document}
+
