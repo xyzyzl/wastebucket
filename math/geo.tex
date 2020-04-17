@@ -1,0 +1,26 @@
+\documentclass{scrartcl}
+\usepackage[sexy]{evan}
+\usepackage[utf8]{inputenc}
+
+\maketitle
+
+\begin{document}
+
+\section{EGMO}
+\subsection{Chapter 1}
+
+\subsection{Chapter 2}
+
+\subsection{Chapter 3}
+\begin{problem}[APMO 2004/2]
+	27. Let $O$ be the circumcenter and $H$ the orthocenter of an acute triangle $ABC$. Prove that the area of one of the triangles $AOH, BOH, $ and $COH$ is equal to the sum of the areas of the other two.
+\end{problem}
+
+\begin{solution}
+	Because the base of each of the triangles is equal, it suffices to prove that the heights of the triangles from $OH$ satisfy this property. For simplicity, we claim that $[AOH] = [BOH] + [COH]$; the other directions can be proven similarly.
+
+	It is well known that $O, G, H$ are collinear on the Euler Line. Note that we can make the base any line that passes through $G$, including the one $t$ that is parallel to $BC$. Let the median from $A$ intersect $\overline{BC}$ at $M$. Then $AG = 2GM$, so the height from $A$ to $t$ is twice the height from $B$ to $t$, which is equal to the height from $C$ to $t$ as $t || BC$. Hence, the height from $A$ to $t$ is equal to the sum of the height from $B$ to $t$ and the height from $C$ to $t$, which completes the proof.
+\end{solution}
+
+\end{document}
+
