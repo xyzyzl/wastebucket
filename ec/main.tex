@@ -1,13 +1,12 @@
-\documentclass{scrartcl}
+l\documentclass{scrartcl}
 \usepackage[utf8]{inputenc}
 \usepackage[sexy]{evan}
 
 \title{Euler Circle}
 \author{Albert Ye}
-\date{April 1, 2020}
+\date{\today}
 
 \begin{document}
-
 \maketitle
 
 \section{Week 1}
@@ -107,6 +106,10 @@ Example: $f : \mathbb{R} \rightarrow (\mathbb{R}_{>0}, \times), f(x) = e^x$.
 
 Isomorphisms and automorphisms are homomorphisms.
 
+\begin{proposition}
+    For any $h\in G,$ the map $\phi_h : G\to G$ given by $\phi_h(g) =hgh^{-1}$ is an automorphism. Such automorphisms are called \vocab{inner automorphisms}.
+\end{proposition}
+
 \begin{definition}
 	The \vocab{conjugate} of $g$ by $h$ is $hgh^{-1} \in G$. The \vocab{conjugacy class} is the set of all such conjugates.
 \end{definition}
@@ -149,31 +152,253 @@ Conjugation is not necessarily faithful, as if $g \in Z(G)$, then $gx = x$.
 \end{definition}
 
 \subsection{Homework}
-\begin{problem}
-	will fill later
+\begin{problem}[1]
+	Show that if $G$ and $H$ are finite groups, and $G \cong H,$ then $|G| = |H|.$ Find an example to show that the converse is false.
 \end{problem}
 
-\begin{solution}
+\begin{soln}
 	We know that this is true by definition, as $G$ and $H$ are bijective. Each element of $G$ must map to an element of $H$. \\ \\
 	The two groups $\mathbb{Z} / 2\mathbb{Z} \times \mathbb{Z} / 2\mathbb{Z}$ and $\mathbb{Z} / 4\mathbb{Z}$ do not fit. We cannot generate the element $3$ from the elements of 1, because we can sum to at most 1.
-\end{solution}
+\end{soln}
 
-\begin{problem}
+\begin{problem}[2]
 	Show that $G \times H \cong H \times G$
 \end{problem}
 
-\begin{solution}
+\begin{soln}
 	For $G \times H$, all of the elements of $G$ and $H$ are paired to each other with $G$ as the first element. For $H \times G$, the same elements exist but with $G$ as the second element instead. Thus, we can map each element of $G \times H$ to each element of $H \times G$ by flipping the order.
-\end{solution}
+\end{soln}
 
-\begin{problem}
-	will add later
+\begin{problem}[3]
+    Show that if $H, K \le G,$ then
+    \begin{itemize}
+        \item $H \cap K \le G.$ 
+        \item $H \cup K$ is not necessarily a subgroup of $G.$
+    \end{itemize}
 \end{problem}
 
-\begin{solution}
-	We know that the number of red cycles is $4 \cdot 3 \cdot 2 \cdot 1 = 24$ if we fix the red point. However, this graph is undirected so we need to divide the count by two. \\
-	It is well known that each such red cycle has a blue complementary cycle. However, we are again double counting, so we divide by 2 again to get 6.
-\end{solution}
+\begin{soln}
+    For part 1, all we need is proof of closure. If $H \cap K$ is not closed, then it implies that $H$ or $K$ is also not closed. \\
+    FOR part 2, some element in $H \cup K$ could not also be in $H \cup K$. There are many such subgroups of $G = S_3$.
+\end{soln}
+
+\begin{problem}[4]
+    When is the function $f : G \to G$ given by $f(g) = g^2$ a homomorphism?
+\end{problem}
+
+\begin{soln}
+    $f(g_1g_2) = g_1g_2g_1g_2$. We want it of the form $f(g_1g_2) = g_1g_1g_2g_2$, which can be attained iff $g_1g_2 = g_2g_1$, implying $G$ must be abelian.
+\end{soln}
+
+\begin{problem}[5]
+    We showed that if $f : G \to H$ is a homomorphism, and $g \in G$ has order $n,$ then $f(g) \in H$ has order $\le n.$ Show that the order of $f(g)$ divides $n.$
+\end{problem}
+
+\begin{soln}
+    We saw from our proof that the order of $f(g) \in H$ had order $\le n$ that $f(g)^n = f(e_G) = e_H$. If $ord(f(g)) \nmid n$, then this cannot be true.
+\end{soln}
+
+\begin{problem}[6]
+    Is every subgroup of $G_1 \times G_2$ necessarily of the form $H_1 \times H_2,$ where $H_1 \leq G_1$ and $H_2 \le G_2?$ Give a proof or find a counterexample.
+\end{problem}
+
+\begin{soln}
+    We claim that this is \textbf{not} necessarily true. Note that $\{(0, 0), (1, 1)\}$ is a subgroup. All properties of a group but closure are inherited from $\mathbb{Z} / 2\mathbb{Z}$. This is also closed. However, it is not a direct product of any other subgroups of $\mathbb{Z} / 2\mathbb{Z}$
+\end{soln}
+
+\begin{problem}[11]
+    Show that $\text{Aut}(G)$ is a group. Show that $\text{Inn}(G) \le \text{Aut}(G).$ (the operation is $\circ$).
+\end{problem}
+
+\begin{soln}
+    As all automorphisms are bijective functions, we only need to prove closure. However, even this is true, as the composition of two bijective functions is itself bijective. \\ \\
+    Next, we prove that an inner automorphism is a group. We know that an inner automorphism is already a \textbf{subset} of the group of automorphisms. Again, everything except closure is inherited from the group of automorphisms. But for closure, we have that
+    $$(\phi_h \circ \phi_k)(g) = (\phi_h(\phi_k(g)) = \phi_h(kgk^{-1}) = h(kgk^{-1})h^{-1} = \phi_{hk}(g).$$
+\end{soln}
+
+\begin{definition}
+    The \vocab{alternating group} $A_n$ is the group of permutations with an even number of swaps.
+\end{definition}
+
+\begin{problem}[15]
+    Prove that $A_n$ is a group.
+\end{problem}
+
+\begin{soln}
+    The identity and invertibility axioms are trivial. \\
+    \\
+    We claim $A_n$ is associative. Let $s_1, s_2, s_3$ be permutations. Then $$(s_1 \circ s_2) (s_3) = (s_1) (s_2 \circ s_3) \implies s_1(s_2(s_3(x))) = s_1(s_2(s_3(x))).$$
+    Finally, we claim $A_n$ is closed. This is obvious, as the composition of two permutations with an even number of swaps cannot have an odd number of swaps.
+\end{soln}
+
+\begin{problem}[23]
+	Consider a pentagon together with all its diagonals. Show that, up to switching the colors, there are 6 ways of coloring the edges and diagonals of the pentagon red and blue, so that the red edges form a cycle of length 5, and the blue edges also form a cycle of length 5. Call these colorings the \textit{mystic pentagons}.
+\end{problem}
+
+\begin{soln}
+	We fix the first point $P$. We know that the number of red cycles is $4 \cdot 3 \cdot 2 \cdot 1 = 24$ if we fix $P$. However, this graph is undirected, and our count is directed as we cared about direction. Each cycle was traversed forward and backward, so we divide by 2. \\
+	It is well known that each such red cycle has a blue complementary cycle. However, we are again double counting because simply flipping the colors is given to be identical. Thus, we divide by 2 again to get 6.
+\end{soln}
+
+\begin{problem}[24]
+    Show that there is a homomorphism $\phi : S_5 \rightarrow S_6$, obtained by permuting the vertices of the mystic pentagons. Show that $\ker(\phi) = \{e\}$.
+\end{problem}
+
+\begin{soln}
+    The group $S_5$ acts on the set of permutations described in the previous problem. Thus, we have $\phi : S_5 \rightarrow S_6$, each $\sigma \in S_5$ giving a different permutation of the vertices and a grouping of the edges. There are $6$ edges to choose from, thus that is equivalent to permuting $6$ things. Hence, we have $S_6$. \\
+    The second claim is equivalent to claiming $\phi$ is injective. Every element in $S_5$ gives a different permutation of the vertices. However, each cycle has 5 ways to configure it. We could partition the edges the same way and just cyclic shift the vertices. However, there are six cycles to choose from, ensuring that each different configuration has a match in a different cycle. Therefore, $\phi$ must be injective.
+\end{soln}
+
+\section{Week 3}
+\subsection{Notes}
+\subsubsection{Cosets}
+\begin{definition}
+    Let $G$ be a group, $H$ a subgroup of $G$. Then the \vocab{left coset} is $gH = \{gh | h \in H\}$ and the \vocab{right coset} is $Hg = \{gh | h \in H\}$. The two are not equal.
+\end{definition}
+Example: Let $G = \mathbb{Z}$ and $H = 3\mathbb{Z}$. Then $H \le G$ and there are three distinct cosets, namely $H, 1+H, 2+H$.
+
+Example: Let $G$ be a group acting on a set $X$ and let $x \in X$. Let $G_x$ be the stabilizer of $x$, i.e. $G_x = \{ g \in G | gx = x \}$. The left cosets of $G_x$ are in bijection with the orbit of $x$.
+
+\begin{proposition}
+    Let $G$ be a group and $H \le G$. Let $g_1H, g_2H$ be cosets. Then either $g_1H = g_2H$ or $g_1H \cap g_2H = \{\}$.
+\end{proposition}
+
+\begin{proof}
+    Suppose $g_1H \cap g_2 H \neq \varnothing$, so there is some $x \in g_1H \cap g_2H$. Thus there exist $h_1,h_2 \in H$ such that $x = g_1h_1$ and $x = g_2h_2$. THus $g_1h_1 = g_2h_2$, so $g_1 = g_2h_2h_1^{-1}$. If $g_1h \in g_1H$, then $g_1h = g_2h_2h_1^{-1}h \in g_2H$. Thus $g_1H \subseteq g_2H$.
+    
+    By symmetry $g_2H \subseteq g_1H$ as well, so $g_1H = g_2H$.
+\end{proof}
+
+\begin{proposition}
+    $g_1H = g_2H \iff g_1^{-1}g_2 = H$.
+\end{proposition}
+
+\begin{proof}
+    Since $e \in H$, $g_2 \in g_2H$. THus $g_1H = g_2H \iff g_2 \in g_1H$ or $g_1^{-1}g_2 \in H$. Consider cosets $k + 3\mathbb{Z}$ and $l + 3\mathbb{Z}$. These are equal iff $-k + l \in 3\mathbb{Z}$. 
+\end{proof}
+
+\begin{proposition}
+    Corollary: Let $G$ be a finite group and $H \le G$. Then any two cosets of $H$ in $G$ have the same size. 
+\end{proposition}
+
+\begin{proof}
+    Let $g_1H$ and $g_2H$ be two cosets. We find a bijection $\phi : g_1H \rightarrow g_2H$. We define $\phi$ by $\phi(g_1h) = g_2h$. To see this is a bijection, we add the inverse $\psi : g_2H \rightarrow g_1H$ s.t. $\psi(g_2h) = g_1h$. It's easy to see that $\phi$ and $\psi$ are inverses.
+\end{proof}
+
+\subsubsection{Lagrange's Thm.}
+\begin{theorem}[Lagrange]
+    Let $G$ be a finite group of order $n$, and let $H \le G$ have order $m$. Then $m | n$. 
+\end{theorem}
+
+\begin{proof}
+    WE partition $G$ into several subsets, each of size $m$. The natural partition is simply the cosets of $H$. These each have size $m$ and they are disjoint. Their union is $G$, which has size $n$. Thus $m | n$.
+\end{proof}
+
+\begin{corollary}
+    The order of any element of $G$ divides the order of $G$.
+\end{corollary}
+
+\begin{proof}
+    Let $g \in G$ be any element, and let $H$ be the subgroup generated by $G$. Then apply Lagrange on $G, H$.
+\end{proof}
+
+\begin{theorem}[Fermat's Little Theorem]
+    Let $p$ be a prime and let $p \nmid a, a \in \mathbb{Z}$. Then $a^{p-1} \equiv 1 \pmod p$.
+\end{theorem}
+
+\begin{proof}
+    The nonzero elements of $\mathbb{Z}/p\mathbb{Z}$ form a group $(\mathbb{Z}/p\mathbb{Z}^\times$ of order $p-1$. Since $p \nmid a$, it's represented by some elements of $\mathbb{Z}/p\mathbb{Z}^\times$, say $b$. Let $m$ be the order of $b$ in $\mathbb{Z}/p\mathbb{Z}^\times$. We know that $m | p-1$, so $b^{p-1} = e$ in $\mathbb{Z}/p\mathbb{Z}^\times$, which means that $a^{p-1} \equiv 1 \pmod p$.
+\end{proof}
+
+\newpage
+\subsection{Homework}
+
+\begin{problem}[1]
+    Show that for $n \ge 2$, $|A_n| = \frac{n!}{2}$.
+\end{problem}
+
+\begin{soln}
+    As $S_n = n!$, we are motivated to show that there is some homomorphism $f : A_n \rightarrow B_n$, where $B_n$ is the \textit{set} containing all permutation with an odd number of transpositions. Let $\tau$ be some transposition. Then obviously $f(\sigma) = \tau \sigma \in B_n$.
+\end{soln}
+
+\begin{problem}[2]
+    Describe the groups $\mathbb{Q} / \mathbb{Z}$ and $\mathbb{R} / \mathbb{Q}$ as well as you can.
+\end{problem}
+
+\begin{soln}
+    We know that both groups are quotient groups as $\mathbb{Q}$ and $\mathbb{R}$ are abelian and $\mathbb{Q}, \mathbb{R}, \mathbb{Z}$ are all groups. \\
+    \\
+    The group $\mathbb{Q} / \mathbb{Z}$ consists of $\{ \dotsc, -1 + q, q, 1 + q, 2 + q, \dotsc \}$ for $q \in \mathbb{Q}$. The group $\mathbb{R} / \mathbb{Z}$ is similar, but for all rationals and reals as opposed to integers and rationals.
+\end{soln}
+
+\begin{problem}[3]
+    Suppose that $H,K\lhd G,$ and that $H\cap K=\{e\}.$ Show that if $h\in H$ and $k\in K,$ then $h$ and $k$ commute.
+\end{problem}
+\begin{soln}
+    We know that $g^{-1}hg \in H, g^{-1}kg \in K$ for $g \in G, h \in H, k \in K$. We take advantage of the fact that $K, H$ are subgroups of $G$.\\
+    \\
+    It must be true that $h \cdot (kh^{-1}k^{-1} \in H$, and it must be true that $(hkh^{-1}) \cdot k^{-1} \in K$. This implies that 
+    \begin{align*}
+        hkh^{-1}k^{-1} &\in H \cap K \\
+        \implies hkh^{-1}k^{-1} &= e \\
+        \implies hkh^{-1}k^{-1} &= e = hh^{-1}kk^{-1}.
+    \end{align*}
+    So $h,k$ commute.
+\end{soln}
+
+\begin{problem}[5]
+    Suppose $K \lhd H$ and $H \lhd G.$ Then $K$ is a subgroup of $G.$ Is it necessarily normal? Prove or give a counterexample.
+\end{problem}
+
+\begin{soln}
+    We claim this is not necessarily true. Consider subset $A = \{ (12)(34), e \}$ and $B = \{(12)(34), (13)(42), (23)(41), e \}$. $A \lhd B$ and $B \lhd S$, but $A$ is not normal to $S$.
+\end{soln}
+
+\begin{problem}[6]
+    The \textit{commutator subgroup} $[G, G]$ of $G$ is the subgroup generated by all elements of the form $[g, h] := ghg^{-1}h^{-1}.$ (So, it contains all products of elements of the form $[g, h].$) Show that $[G, G] \lhd G,$ and that $G/[G, G]$ is abelian.
+\end{problem}
+
+\begin{soln}
+Let $g \in G, h \in [G,G].$ We know that $ghg^{-1} = (ghg^{-1})(h^{-1}h) = [g,h]h \in [G,G]$. Hence, $[G,G] \lhd G$. 
+
+For commutivity, we have $$(a[G, G])(b[G, G]) = ab[G,G] = ab[b,a][G,G] = ba[G,G] = (b[G,G])(a[G,G]).$$
+\end{soln}
+
+\newpage
+\section{Week 4}
+
+\subsection{Homework}
+
+\begin{problem}[1]
+    Show that there is an injective homomorphism $f : S_m \times S_n \rightarrow S_{m+n}$.
+\end{problem}
+
+\begin{soln}
+    Note that we have a pair containing some permutation of $1 \cdots m$ and some permutation of $1 \cdots n$. We can add $m-1$ to all elements on the right side (permutation of $1 \cdots n$) to get some unique permutation of $1 \cdots m+n$. \\
+	Now we know that $f$ is an injective function. Now we claim it is a homomorphism. $f(ab) = f(a \circ b)$. Because $a,b$ are permutations, we know that $f(a \circ b) = f(a) \circ f(b)$.
+\end{soln}
+
+\begin{problem}[4]
+	Prove $N_G(H) \le G$, and that it is the largest subgroup $K$ such that $H \lhd K$.
+\end{problem}
+
+\begin{soln}
+	As $N_G(H)$ consists of all $g \in G$ such that $gHg^{-1} = H$, we only need to prove that $N_G(H)$ is a group. \\ 
+	\textbf{Identity.} $eHe^{-1} = H$ is obviously true, so the identity is in $N_G(H)$. \\
+	\textbf{Associativity.} This is inherited from $G$. \\ 
+	\textbf{Invertability.} Assume $g \in N_G(H)$. Then, $g^{-1}Hg = g^{-1}(gHg^{-1})g = eHe = H$. \\
+	\textbf{Closure.} Let $g, h \in N_G(H)$. We know that $H = gHg^{-1} = g(hHh^{-1})g^{-1} = (gh)H(h^{-1}g^{-1}) = (gh)H(gh)^{-1}$, so $N_G(H)$ is closed. \\
+	As $N_G(H)$ meets all the criteria of a group, it must be one.
+\end{soln}
+
+\begin{problem}[7]
+    Show that a Sylow-2 subgroup of $A_4$ is isomorphic to $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$.
+\end{problem}
+
+\begin{soln}
+    First note that $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}=H$ is composed of only elements $e, a, b, ab$, and that all non-identity elements have order 2. Also note that a $|A_4| = 12$, so a Sylow-2 subgroup of $A_4$ must have order 4. \\
+    We choose the subgroup $G = \{ e, (12)(34), (13)(24), (14)(23) \}$. $G$ must be associative and all elements are their own inverses. All that is left is closure. There are only $6$ pairs to test out, and all lead to some other element. But more importantly, every two non-identity elements produces the third by composition. This can also be easily verified. Therefore, $G$ is a group, and it is also of the form $\{ e, a, b, ab \}$. Hence, we can make an isomorphism between the two.  
+\end{soln}
 
 \end{document}
 
