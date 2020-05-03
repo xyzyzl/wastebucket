@@ -1,4 +1,4 @@
-l\documentclass{scrartcl}
+\documentclass{scrartcl}
 \usepackage[utf8]{inputenc}
 \usepackage[sexy]{evan}
 
@@ -383,12 +383,12 @@ For commutivity, we have $$(a[G, G])(b[G, G]) = ab[G,G] = ab[b,a][G,G] = ba[G,G]
 \end{problem}
 
 \begin{soln}
-	As $N_G(H)$ consists of all $g \in G$ such that $gHg^{-1} = H$, we only need to prove that $N_G(H)$ is a group. \\ 
+	We only need to prove that $N_G(H)$ is a group. \\ 
 	\textbf{Identity.} $eHe^{-1} = H$ is obviously true, so the identity is in $N_G(H)$. \\
 	\textbf{Associativity.} This is inherited from $G$. \\ 
 	\textbf{Invertability.} Assume $g \in N_G(H)$. Then, $g^{-1}Hg = g^{-1}(gHg^{-1})g = eHe = H$. \\
 	\textbf{Closure.} Let $g, h \in N_G(H)$. We know that $H = gHg^{-1} = g(hHh^{-1})g^{-1} = (gh)H(h^{-1}g^{-1}) = (gh)H(gh)^{-1}$, so $N_G(H)$ is closed. \\
-	As $N_G(H)$ meets all the criteria of a group, it must be one.
+	As $N_G(H)$ meets all the criteria of a group, it must be one. Now we claim it's the largest subgroup of $G$ $K$ such that $H \lhd K$. Assume there is some value of $g$ such that $gHg^{-1} = H$, but $g$ is not in $N_G(H)$. We have a contradiction, as by definition of $N_G(H)$ it must be in $N_G(H)$.
 \end{soln}
 
 \begin{problem}[7]
