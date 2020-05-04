@@ -400,5 +400,23 @@ For commutivity, we have $$(a[G, G])(b[G, G]) = ab[G,G] = ab[b,a][G,G] = ba[G,G]
     We choose the subgroup $G = \{ e, (12)(34), (13)(24), (14)(23) \}$. $G$ must be associative and all elements are their own inverses. All that is left is closure. There are only $6$ pairs to test out, and all lead to some other element. But more importantly, every two non-identity elements produces the third by composition. This can also be easily verified. Therefore, $G$ is a group, and it is also of the form $\{ e, a, b, ab \}$. Hence, we can make an isomorphism between the two.  
 \end{soln}
 
-\end{document}
+\section{Week 5}
 
+\begin{problem}[12]
+	Prove that for each positive integer $n$, there are pairwise relatively prime integers $k_0, k_1 \dotsc, k_n$, all strictly greater than 1, such that $k_0 k_1 \dotsm k_n -1$ is the product of two consecutive integers.
+\end{problem}
+
+\begin{soln}
+	We use induction. Note that for $n=0$, setting $k_0=3$ leads to $k_0-1 = 1 \cdot 2$. For $n=1$, setting $k_0=3, k_1=7$ leads to $k_0k_1-1 = 4 \cdot 5$. And for $n=2$, setting $k_0=3, k_1=7, k_2=31$ leads to $k_0k_1k_2-1 = 25 \cdot 26$. \\
+	For the induction, we claim that if $k_0k_1 \dotsc k_n = a^2+a+1$, then $k_{n+1}(a^2+a+1) = (a+1)^4+(a+1)^2+1$, where $k_{n+1}$ is some integer relatively prime to all $k_i \forall i \in \{0,1, \cdots, n\}$. \\
+	First, we claim that $k_{n+1} = \dfrac{(a+1)^4 + (a+1)^2 + 1}{a^2+a+1}$ is always an integer. But dividing gives us $k_{n+1} = a^2+3a+3$, which is always an integer as $a$ is always an integer. \\
+	Next, we claim that $\text{gcd}(k_0, k_1, \dotsc, k_n, k_{n+1}) = 1$ -- in other words, all $k_i$ are relatively prime for $i \in \{0, 1, \dotsc, n-1\}$. We just use the Euclidean Algorithm. This is equivalent to $\text{gcd}(k_0k_1 \cdots k_n, k_{n+1}) = 1$.
+	\begin{align*}
+		\text{gcd}(k_{n+1}, k_0k_1\cdotsk_n) &= 1 \\
+		\implies \text{gcd}(a^2+3a+3, a^2+a+1) = 1 \\
+		\implies \text{gcd}(2a+2, a^2+a+1) = 1 \\
+		\implies \text{gcd}(2(a+1), a(a+1)+1) = 1,
+	\end{align*}
+	which must be true. Hence, $k_{n+1}$ is relatively prime to all other $k_i$, and we are done.
+\end{soln}
+\end{document}
