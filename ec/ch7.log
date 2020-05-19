@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.5.3)  6 MAY 2020 19:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.5.3)  12 MAY 2020 22:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**ch7.tex
+(./ch7.tex
 LaTeX2e <2018-12-01>
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrartcl.cls
 Document Class: scrartcl 2019/02/01 v3.26b KOMA-Script document class (article)
@@ -192,7 +192,6 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (/usr/share/texlive/texmf-local/tex/latex/asymptote/asymptote.sty
 Package: asymptote 2020/01/12 v1.35 Asymptote style file for LaTeX
- (./main.pre)
 \ASYbox=\box31
 \ASYdimen=\dimen112
 \c@asy=\count101
@@ -252,7 +251,7 @@ Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )))
-\openout4 = `main.pre'.
+\openout4 = `ch7.pre'.
 
 )
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
@@ -1368,8 +1367,9 @@ Package scrlayer-scrpage Info: deactivating warning for font element
 Package scrlayer-scrpage Info: auto-selection of `pagestyleset=KOMA-Script'.
 
 1: section
-) (./main.aux)
-\openout1 = `main.aux'.
+)
+No file ch7.aux.
+\openout1 = `ch7.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
@@ -1387,7 +1387,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 9.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 9.
@@ -1436,10 +1436,8 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
 LaTeX Info: Redefining \nameref on input line 9.
-
-(./main.out) (./main.out)
 \@outlinefile=\write6
-\openout6 = `main.out'.
+\openout6 = `ch7.out'.
 
 Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           Using `bookmark' together with `hyperref' is recommended,
@@ -1537,8 +1535,13 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
+! Undefined control sequence.
+<recently read> \subection 
+                           
+l.11 \subection
+               {Notes}
+? 
 LaTeX Font Info:    Try loading font information for TS1+cmss on input line 12.
-
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -1548,667 +1551,171 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 39.
- [1
+nput line 36.
+
+! Undefined control sequence.
+<recently read> \mathbB 
+                        
+l.39 ...tructible numbers is contained in $\mathbB
+                                                  {R}$. It contains, for ins...
+
+? 
+[1
 
 
 {/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 60.
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
-input line 60.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 90.
+(mdframed)              on input line 54.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
+t line 54.
+Package hyperref Info: bookmark level for unknown problem defaults to 0 on inpu
+t line 58.
+Package hyperref Info: bookmark level for unknown solution defaults to 0 on inp
+ut line 63.
  [2]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 110.
+(mdframed)              on input line 91.
+Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
+t line 91.
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--135
-
+Overfull \hbox (8.21014pt too wide) in paragraph at lines 93--94
+\OT1/cmr/m/n/10.95 (-20) gree $4$ over $\U/msb/m/n/10.95 Q$\OT1/cmr/m/n/10.95 (
+-20) , and it con-tains three quadratic sub-fields: $\U/msb/m/n/10.95 Q\OT1/cmr
+/m/n/10.95 (-20) ([])\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 Q\OT1/cmr/m/n/10.95
+ (-20) ([])\OML/cmm/m/it/10.95 ; \U/msb/m/n/10.95 Q\OT1/cmr/m/n/10.95 (-20) ([]
+)$.
  []
 
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 139.
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 139.
-Package hyperref Info: bookmark level for unknown problem defaults to 0 on inpu
-t line 155.
-! Missing $ inserted.
-<inserted text> 
-                $
-l.162 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.162 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.162 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.162 \end{soln}
-                
-? 
+! Undefined control sequence.
+<recently read> \Aut 
+                     
+l.111 $\Aut
+           (K)$ is the set of automorphisms of $K$. In fact, it's a group. S...
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--162
-
- []
-
-[3]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.170 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.170 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.170 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.170 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.183 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.183 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.183 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.183 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.191 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.191 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.191 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.191 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.199 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.199 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.199 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.199 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.207 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.207 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.207 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.207 \end{soln}
-                
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 214--216
-
- []
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.217 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.217 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.217 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.217 \end{soln}
-                
-? 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 228--230
-
- []
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.232 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.232 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.232 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.232 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.241 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.241 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.241 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.241 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.250 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.250 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.250 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.250 \end{soln}
-                
-? 
-[5]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 263.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 273.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 281.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 289.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 298.
-Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
-put line 298.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 305.
- [6] [7]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.322 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.322 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.322 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.322 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.332 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.332 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.332 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.332 \end{soln}
-                
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 329--332
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 338--341
-
- []
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.347 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.347 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.347 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.347 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.355 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.355 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.355 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.355 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.365 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.365 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.365 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.365 \end{soln}
-                
-? 
-[8]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.379 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.379 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.379 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.379 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.392 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.392 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.392 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.392 \end{soln}
-                
-? 
-
-Overfull \hbox (23.18674pt too wide) in paragraph at lines 386--392
-\OT1/cmr/bx/n/10.95 Closure. \OT1/cmr/m/n/10.95 (-20) Let $\OML/cmm/m/it/10.95 
-g; h \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 N[]\OT1/cmr/m/n/10.95 (-20) (\OM
-L/cmm/m/it/10.95 H\OT1/cmr/m/n/10.95 (-20) )$. We know that $\OML/cmm/m/it/10.9
-5 H \OT1/cmr/m/n/10.95 (-20) = \OML/cmm/m/it/10.95 gHg[] \OT1/cmr/m/n/10.95 (-2
-0) = \OML/cmm/m/it/10.95 g\OT1/cmr/m/n/10.95 (-20) (\OML/cmm/m/it/10.95 hHh[]\O
-T1/cmr/m/n/10.95 (-20) )\OML/cmm/m/it/10.95 g[] \OT1/cmr/m/n/10.95 (-20) = (\OM
-L/cmm/m/it/10.95 gh\OT1/cmr/m/n/10.95 (-20) )\OML/cmm/m/it/10.95 H\OT1/cmr/m/n/
-10.95 (-20) (\OML/cmm/m/it/10.95 h[]g[]\OT1/cmr/m/n/10.95 (-20) ) =
- []
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.401 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.401 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.401 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.401 \end{soln}
-                
-? 
-
-Overfull \hbox (39.88315pt too wide) detected at line 416
-[]
- []
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.419 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.419 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.419 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.419 \end{soln}
-                
-? 
-[9]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.437 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.437 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.437 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.437 \end{soln}
-                
 ? 
 ! Undefined control sequence.
-l.445 	We can think of a number $k = p_1p_2\cdotsp
-                                                  _n$ as the finite abelian ...
-
-? 
-! Double subscript.
-l.445 ...can think of a number $k = p_1p_2\cdotsp_
-                                                  n$ as the finite abelian g...
+l.111 ...ppose $K$ is a field and $\sigma \in \Aut
+                                                  (K)$. Then there are some ...
 
 ? 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 448.
-Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
-line 448.
-! Missing $ inserted.
-<inserted text> 
-                $
-l.462 	\end{proof}
-                  
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.462 	\end{proof}
-                  
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.462 	\end{proof}
-                  
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.462 	\end{proof}
-                  
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.465 \end{soln}
-                
-? 
-! Extra }, or forgotten $.
-\qed  ...\nobreak \hfill \quad \hbox {\qedsymbol }
-                                                  \fi 
-l.465 \end{soln}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.465 \end{soln}
-                
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.465 \end{soln}
-                
-? 
-[10] [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 469.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 469.
- (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 469.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 469.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(mdframed)              on input line 114.
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
+input line 114.
+! Undefined control sequence.
+l.114 	If $\sigma \in \Aut
+                          (K)$, then the set of elements of $K$ fixed by $\s...
 
+? 
+[3]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 129.
+
+! Undefined control sequence.
+<recently read> \Aut 
+                     
+l.130 ...s a tower of field extensions, then $\Aut
+                                                  (L/K) \le \Aut(L/f)$.
+? 
+! Undefined control sequence.
+l.130 ...ield extensions, then $\Aut(L/K) \le \Aut
+                                                  (L/f)$.
+? 
+! Undefined control sequence.
+l.131 		\item If $H_1 \le H_2 \le \Aut
+                                      (K)$, then $K^{H_1} \subset K^{H_2}$.
+? 
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 136.
+! Undefined control sequence.
+l.136 ...e a field extension. Let $\sigma \in \Aut
+                                                  (K/F)$, let $\alpha \in K$...
+
+? 
+! Undefined control sequence.
+l.151 ...ha)$, for instance, then $\sigma \in \Aut
+                                                  (K/F)$ is entirely determi...
+
+? 
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 154.
+! Undefined control sequence.
+l.154 ...$F$, and let $K = F(\alpha)$. Then $|\Aut
+                                                  (K/F)| \le [K:F]$.
+? 
+! Undefined control sequence.
+<recently read> \Aut 
+                     
+l.157 ...ting field of $f(x)$ over $F$, then $\Aut
+                                                  (K/F) = [K:F]$.
+? 
+[4]
+! Undefined control sequence.
+l.172 ... is said to be \vocab{Galois} if $K^{\Aut
+                                                  (K/F)} = F$.
+? 
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 176.
+! Undefined control sequence.
+l.180 		\item $|\Aut
+                    (K/F)| = [K:F]$
+? 
+! Undefined control sequence.
+<recently read> \Gal 
+                     
+l.185 	If $K/F$ is Galois, we write $\Gal
+                                         (K/F)$ instead of $\Aut(K/F)$. We c...
+
+? 
+! Undefined control sequence.
+<recently read> \Aut 
+                     
+l.185 ...is, we write $\Gal(K/F)$ instead of $\Aut
+                                                  (K/F)$. We call $\Gal(K/F)...
+
+? 
+! Undefined control sequence.
+<recently read> \Gal 
+                     
+l.185 ...F)$ instead of $\Aut(K/F)$. We call $\Gal
+                                                  (K/F)$ the \vocab{Galois g...
+
+? 
+[5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 187.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 187.
+ (./ch7.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 187.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 187.
+
+
+Package rerunfilecheck Warning: File `ch7.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `ch7.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 469.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 187.
  ) 
 Here is how much of TeX's memory you used:
- 39642 strings out of 494553
- 781157 string characters out of 6177319
- 1000900 words of memory out of 5000000
- 42589 multiletter control sequences out of 15000+600000
- 547216 words of font info for 109 fonts, out of 8000000 for 9000
+ 39520 strings out of 494553
+ 779451 string characters out of 6177319
+ 999813 words of memory out of 5000000
+ 42562 multiletter control sequences out of 15000+600000
+ 545827 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,20n,91p,9110b,1206s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,20n,91p,9109b,1129s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
@@ -2219,21 +1726,17 @@ s/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/cm-super/sfsx1095.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/cm-super/sfsx1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/cm-super/sfsx1440.pfb>
-Output written on main.pdf (11 pages, 244458 bytes).
+9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
+Output written on ch7.pdf (5 pages, 193751 bytes).
 PDF statistics:
- 360 PDF objects out of 1000 (max. 8388607)
- 306 compressed objects within 4 object streams
- 122 named destinations out of 1000 (max. 500000)
- 18173 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 203 PDF objects out of 1000 (max. 8388607)
+ 161 compressed objects within 2 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 16029 words of extra memory for PDF output out of 17280 (max. 10000000)
 

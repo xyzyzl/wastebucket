@@ -402,6 +402,22 @@ For commutivity, we have $$(a[G, G])(b[G, G]) = ab[G,G] = ab[b,a][G,G] = ba[G,G]
 
 \section{Week 5}
 
+\begin{problem}[9]
+	The numbers in the sequence $101$, $104$, $109$, $116$,$\ldots$ are of the form $a_n=100+n^2$, where $n=1,2,3,\ldots$. For each $n$, let $d_n$ be the greatest common divisor of $a_n$ and $a_{n+1}$. Find the maximum value of $d_n$ as $n$ ranges through the positive integers.
+\end{problem}
+
+\begin{soln}
+	This is essentially an exercise in the Euclidean algorithm.
+	\begin{align*}
+		\gcd(100+n^2, 100+(n+1)^2) &= \gcd(100+n^2, 100+n^2+2n+1) \\
+		&= \gcd(100+n^2, 2n+1) \\
+		&= \gcd(n^2+100-100(2n+1), 2n+1)
+		&= \gcd(n^2-200n, 2n+1).
+	\end{align*}
+
+	As $\gcd(n, 2n+1) = 1$, we solely need $\gcd(n-200, 2n+1) = \gcd(n-200, 401)$. Therefore, we have that the maximal gcd is $\boxed{401}$.
+\end{soln}
+
 \begin{problem}[12]
 	Prove that for each positive integer $n$, there are pairwise relatively prime integers $k_0, k_1 \dotsc, k_n$, all strictly greater than 1, such that $k_0 k_1 \dotsm k_n -1$ is the product of two consecutive integers.
 \end{problem}
@@ -412,11 +428,42 @@ For commutivity, we have $$(a[G, G])(b[G, G]) = ab[G,G] = ab[b,a][G,G] = ba[G,G]
 	First, we claim that $k_{n+1} = \dfrac{(a+1)^4 + (a+1)^2 + 1}{a^2+a+1}$ is always an integer. But dividing gives us $k_{n+1} = a^2+3a+3$, which is always an integer as $a$ is always an integer. \\
 	Next, we claim that $\text{gcd}(k_0, k_1, \dotsc, k_n, k_{n+1}) = 1$ -- in other words, all $k_i$ are relatively prime for $i \in \{0, 1, \dotsc, n-1\}$. We just use the Euclidean Algorithm. This is equivalent to $\text{gcd}(k_0k_1 \cdots k_n, k_{n+1}) = 1$.
 	\begin{align*}
-		\text{gcd}(k_{n+1}, k_0k_1\cdotsk_n) &= 1 \\
-		\implies \text{gcd}(a^2+3a+3, a^2+a+1) = 1 \\
-		\implies \text{gcd}(2a+2, a^2+a+1) = 1 \\
-		\implies \text{gcd}(2(a+1), a(a+1)+1) = 1,
+		\text{gcd}(k_{n+1}, k_0k_1\cdots k_n) &= 1 \\
+		\implies \text{gcd}(a^2+3a+3, a^2+a+1) &= 1 \\
+		\implies \text{gcd}(2a+2, a^2+a+1) &= 1 \\
+		\implies \text{gcd}(2(a+1), a(a+1)+1) &= 1,
 	\end{align*}
 	which must be true. Hence, $k_{n+1}$ is relatively prime to all other $k_i$, and we are done.
 \end{soln}
+
+\begin{problem}[14]
+	Use Jordan-Hölder to prove the Fundamental Theorem of Arithmetic -- each number has a unique prime factorization.
+\end{problem}
+
+\begin{soln}
+	Let $n$ be a positive integer and $p_i$ be a prime such that $p_i \ge p_{i+1}$. \\
+	We can think of a number $k = p_1p_2\cdotsp_n$ as the finite abelian group $\mathbb{Z} / k \mathbb{Z}$. Let $G_i = (\mathbb{Z}/p_1\mathbb{Z}) \times (\mathbb{Z}/p_2\mathbb{Z}) \times \cdots \times (\mathbb{Z}/p_i\mathbb{Z})$ for all $i$, and let $G_0 = e$. Note that $G_n = \mathbb{Z}/k\mathbb{Z}$. Suppose we want to go from $G_i$ to $G_{i+1}$. Then we would just take the direct product $G_i \times \mathbb{Z}/p_{i+1}\mathbb{Z}$. \\
+	First, we state a lemma.
+	\begin{lemma}
+		$(\mathbb{Z}/a\mathbb{Z}) \times (\mathbb{Z}/b\mathbb{Z}) \cong (\mathbb{Z}/ab\mathbb{Z})$ with addition.
+	\end{lemma}
+	\begin{proof}
+		We claim that the isomorphism in question is $\phi : \mathbb{Z}/a\mathbb{Z} \times \mathbb{Z}/b\mathbb{Z}$ such that $\phi((i,j)) = aj+i$. We know that this is bijective because combining $(i, j) = aj+i$ is like choosing cell $(i, j)$ of an $a \times b$ grid. Each $(i, j)$ leads to a different cell, and each cell has a different $(i, j)$ index. \\
+		We also claim that $\phi$ is a homomorphism. This is relatively easy to show.
+		\begin{align*}
+			\phi((i_1, j_1) \cdot (i_2, j_2)) &= \phi((i_1, j_1) + (i_2, j_2)) \\
+			&= \phi((i_1+i_2, j_1+j_2)) \\
+			&= a(j_1+j_2) + (i_1+i_2) \\
+			&= a(j_1) + i_1 + a(j_2) + i_2 \\
+			&= \phi((i_1, j_1)) + \phi((i_2, j_2)) \\
+			&= \phi((i_1, j_1)) \cdot \phi((i_2, j_2)).
+		\end{align*}
+		Thus, it must be a homomorphism. As it's also bijective, it must be an isomorphism.
+	\end{proof}
+	Using $\phi$, we can turn each $G_i = (\mathbb{Z}/p_1\mathbb{Z} \times \cdots \times \mathbb{Z}/p_i\mathbb{Z}$ into $G_i = \mathbb{Z}/p_1p_2\cdots p_i\mathbb{Z}$.
+	So now we want to show that $G_i$ is the maximal normal subgroup of $G_{i+1}$. We know that $\mathbb{Z}/a\mathbb{Z} \lhd \mathbb{Z}/b\mathbb{Z} \iff a \mid b$. Therefore, we know that $G_i \lhd G_{i+1}$ by definition. We also know that $\frac{|G_{i+1}|}{|G_i|}$ is prime, so there's nothing between $G_i$ and $G_{i+1}$ that could be a normal subgroup. Hence, we have that $G_i$ is a maximal normal subgroup of $G_{i+1}$ for all $i$, and that $G$ is a composition series. Thus, we are done by Jordan-Hölder.
+\end{soln}
+
+
+
 \end{document}
